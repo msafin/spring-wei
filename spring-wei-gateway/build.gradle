@@ -1,0 +1,33 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.M7'
+	}
+	repositories {
+		maven {url 'http://repo.spring.io/milestone/'}
+		mavenCentral();
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE") 
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot' 
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+  imports {
+    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.M5'
+  }
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+}
+repositories {
+    maven { url 'https://repo.spring.io/libs-milestone' }
+    maven { url "http://repo.spring.io/snapshot" }
+}
