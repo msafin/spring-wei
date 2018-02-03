@@ -1,8 +1,17 @@
 server:
-  port: 8088
+  port: 8089
 spring:
   application:
     name: gateway
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 7d6f97a9d0dbe74ab426
+            clientSecret: e730015f54c1adcaaed98a525c51c4670825d2a1
+            redirect-uri-template: http://localhost:8089/login/oauth2/code/github
+          
 zuul:
   routes:
     user:

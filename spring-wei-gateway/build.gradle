@@ -27,6 +27,10 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     compile 'org.springframework.cloud:spring-cloud-security'
+    compile 'org.springframework.security:spring-security-oauth2-core'
+    compile 'org.springframework.security:spring-security-oauth2-client'
+    compile 'org.springframework.security.oauth:spring-security-oauth2'
+    compile 'org.springframework.security:spring-security-jwt'
 }
 repositories {
     maven { url 'https://repo.spring.io/libs-milestone' }
